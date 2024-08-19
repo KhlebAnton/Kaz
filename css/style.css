@@ -39,9 +39,6 @@
     src: url('../fonts/pershotravneva55-regular.ttf');
     font-weight: 400;
 }
-:root {
-    --app-height: 100%;
- }
 
 * {
     margin: 0;
@@ -53,8 +50,7 @@
 html,
 body {
     width: 100%;
-    min-height: 100vh;
-    height: var(--app-height);
+    height: 100%;
     background-color: #000000;
     overflow-x: hidden;
     -webkit-touch-callout: none;
