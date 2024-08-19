@@ -239,7 +239,9 @@ input[type=radio]:checked+label:before {
     gap: 14px;
     border-radius: 0 0 20px 20px;
 }
-
+.screen-game {
+    padding-bottom: 0;
+}
 .btn-action {
     font-weight: 500;
     font-size: 20px;
@@ -253,6 +255,10 @@ input[type=radio]:checked+label:before {
     cursor: pointer;
     transition: .2s;
     padding: 12px 31px;
+    
+}
+.tap-container .btn-action {
+    margin-bottom: 101px;
 }
 
 .btn-action:active {
@@ -357,8 +363,8 @@ img {
     align-items: center;
     flex-direction: column;
     justify-content: space-between;
-    padding-bottom: 21px;
-    gap: 23px;
+    /* padding-bottom: 21px; */
+    
     
 }
 .tap-person {
