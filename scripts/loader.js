@@ -11,7 +11,7 @@ setInterval(()=> {
         countProgress += 1;
     } else {
         setProgress(100);
-        setTimeout(()=> window.location.href = './option.html', 1000)
+        setTimeout(()=> window.location.href = './option.html', 500)
     };
     
 },10)
