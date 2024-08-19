@@ -70,7 +70,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 24px 16px 87px;
+    padding: 24px 16px;
 }
 
 .screen-loader {
