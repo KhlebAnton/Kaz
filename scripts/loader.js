@@ -5,13 +5,14 @@ function setProgress(count) {
 }
 
 let countProgress = 3;
-setInterval(()=> {
+let loaderPlay = setInterval(()=> {
     if(countProgress < 100) {
         setProgress(countProgress);
         countProgress += 1;
     } else {
+        clearInterval(loaderPlay);
         setProgress(100);
-        setTimeout(()=> window.location.href = './option.html', 500)
+        setTimeout(()=> window.location.href = './option.html', 1000)
     };
     
 },10)
