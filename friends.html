@@ -6,7 +6,7 @@
     <meta name="viewport"
         content="width=device-width, height=device-height, initial-scale=1.0, user-scalable=no, user-scalable=0">
     <title>Казах</title>
-    <link href="./css/style.css?v=37812431242323" type="text/css" rel="stylesheet">
+    <link href="./css/style.css?v=378125552323" type="text/css" rel="stylesheet">
 </head>
 
 <body>
@@ -73,11 +73,20 @@
             </div>
             <div class="ref-link">
                 <span id="link">Реф.ссылка</span>
-                <div class="icon-ref">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M4 16C2.9 16 2 15.1 2 14V4C2 2.9 2.9 2 4 2H14C15.1 2 16 2.9 16 4M10 8H20C21.1046 8 22 8.89543 22 10V20C22 21.1046 21.1046 22 20 22H10C8.89543 22 8 21.1046 8 20V10C8 8.89543 8.89543 8 10 8Z" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
-                        
+                <div class="icon-ref" data-link="false">
+                    <svg data-link="false" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M4 16C2.9 16 2 15.1 2 14V4C2 2.9 2.9 2 4 2H14C15.1 2 16 2.9 16 4M10 8H20C21.1046 8 22 8.89543 22 10V20C22 21.1046 21.1046 22 20 22H10C8.89543 22 8 21.1046 8 20V10C8 8.89543 8.89543 8 10 8Z"
+                            stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                    <svg data-link="true" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M9 12L11 14L15 10M22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12Z"
+                            stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+
                 </div>
             </div>
         </div>
@@ -123,6 +132,19 @@
         let params = new URLSearchParams(document.location.search);
         let gender = params.get('gender');
 
+
+        //copy link
+        const link = document.querySelector('.ref-link');
+        const linkUrl = document.getElementById('link');
+        link.addEventListener('click', () => {
+            navigator.clipboard.writeText(linkUrl.textContent)
+                .then(() => {
+                    link.querySelector('.icon-ref').setAttribute('data-link', 'true')
+                })
+                .catch(err => {
+                    console.log('Something went wrong', err);
+                });
+        })
 
     </script>
 
