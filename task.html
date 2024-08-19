@@ -10,7 +10,7 @@
 </head>
 
 <body>
-    <div class="screen screen-game">
+    <div class="screen screen-task">
         <div class="game-header">
             <div class="status-user">
                 <div class="status-user-img">
@@ -24,16 +24,9 @@
                 10 000
             </div>
         </div>
-        <div class="tap-container">
-            <div class="tap-person">
-                <img id="tap-user" src="./img/female.png" alt="">
-            </div>
-            <div class="btn-action">
-                UP LVL
-            </div>
-        </div>
+        .task-
         <div class="footer-nav">
-            <div class="nav-item home select-item "  onclick="window.location.href = `./game.html?gender=${gender}`">
+            <div class="nav-item home " onclick="window.location.href = `./game.html?gender=${gender}`">
                 <div class="nav-item-img">
 
                 </div>
@@ -49,11 +42,11 @@
                     Друзья
                 </div>
             </div>
-            <div class="nav-item task"  onclick="window.location.href = `./task.html?gender=${gender}`">
+            <div class="nav-item task">
                 <div class="nav-item-img">
 
                 </div>
-                <div class="nav-item-title">
+                <div class="nav-item-title select-item " onclick="window.location.href = `./task.html?gender=${gender}`">
                     Задания
                 </div>
             </div>
@@ -68,13 +61,10 @@
         </div>
     </div>
 
-<script src="./scripts/tap.js"></script>
+
 <script>
     let params = new URLSearchParams(document.location.search);
     let gender = params.get('gender')
-    
-    const userImg = document.getElementById('tap-user');
-    userImg.src = `./img/${gender}.png`
     const genderTitle = document.getElementById('gender-title');
     if(gender === 'male') {
         genderTitle.textContent = 'казах'
