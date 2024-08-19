@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, height=device-height, initial-scale=1.0, user-scalable=no, user-scalable=0">
+    <title>Казах</title>
+    <link href="./css/style.css?v=341268523" type="text/css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="screen screen-option">
+        <div class="screen-title title-hello">Привет!</div>
+        <div>
+            <span>Пол:</span>
+            <div class="gender-container">
+                <div class="gender">
+                    
+                    <input type="radio" name="gender" id="male" value="male" >
+                    <label for="male">Мужской</label>
+                </div>
+                <div class="gender">
+                    
+                    <input type="radio" name="gender" id="female" value="female" checked>
+                    <label for="female">Женский</label>
+                </div>
+            </div>
+
+        </div>
+        <div>
+            <span>Язык:</span>
+            <div class="select-lang">
+                <div id="select-lang">Русский</div>
+            </div>
+            <div class="lang-list">
+                <div class="lang-item">Казахский</div>
+                <div class="lang-item select">Русский</div>
+                <div class="lang-item">Английский</div>
+            </div>
+        </div>
+        <div class="btn-action">
+            Продолжить
+        </div>
+    </div>
+
+<script>
+    const langItems = document.querySelectorAll('.lang-item');
+    const selectLang = document.getElementById('select-lang');
+    const selectLangCont = document.querySelector('.select-lang');
+    selectLangCont.addEventListener('click', ()=> {
+        selectLangCont.classList.toggle('open-list')
+    })
+    langItems.forEach((lang)=> {
+        lang.addEventListener('click', ()=> {
+            selectLang.textContent = lang.textContent;
+            langItems.forEach(el=> el.classList.remove('select'));
+
+            lang.classList.add('select');
+            selectLangCont.classList.toggle('open-list');
+        })
+    });
+
+    //click next with gender 
+    const btnAction = document.querySelector('.btn-action');
+
+    function playGame() {
+        if(document.getElementById('male').checked) {
+            window.location.href = `./game.html?gender=male`
+        } else if (document.getElementById('female').checked) {
+            window.location.href = `./game.html?gender=female`
+        }
+    }
+    btnAction.addEventListener('click', ()=> playGame())
+</script>
+</body>
+
+</html>

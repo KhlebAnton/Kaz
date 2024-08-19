@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, height=device-height, initial-scale=1.0, user-scalable=no, user-scalable=0">
+    <title>Казах</title>
+    <link href="./css/style.css?v=341268523" type="text/css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="screen screen-game">
+        <div class="game-header">
+            <div class="status-user">
+                <div class="status-user-img">
+                    <img src="./img/status-user/vip.png" alt="">
+                </div>
+                <div class="status-user-title">
+                    VIP-казашка
+                </div>
+            </div>
+            <div id="total-coin" class="user-coin">
+                10 000
+            </div>
+        </div>
+        <div class="tap-container">
+            <div class="tap-person">
+                <img id="tap-user" src="./img/female.png" alt="">
+            </div>
+            <div class="btn-action">
+                UP LVL
+            </div>
+        </div>
+        <div class="footer-nav">
+            <div class="nav-item home select-item ">
+                <div class="nav-item-img">
+
+                </div>
+                <div class="nav-item-title">
+                    Главная
+                </div>
+            </div>
+            <div class="nav-item friends">
+                <div class="nav-item-img">
+
+                </div>
+                <div class="nav-item-title">
+                    Друзья
+                </div>
+            </div>
+            <div class="nav-item task">
+                <div class="nav-item-img">
+
+                </div>
+                <div class="nav-item-title">
+                    Задания
+                </div>
+            </div>
+            <div class="nav-item market">
+                <div class="nav-item-img">
+
+                </div>
+                <div class="nav-item-title">
+                    Маркет
+                </div>
+            </div>
+        </div>
+    </div>
+
+<script src="./scripts/tap.js"></script>
+<script>
+    let params = new URLSearchParams(document.location.search);
+    let gender = params.get('gender')
+    
+    const userImg = document.getElementById('tap-user');
+    userImg.src = `./img/${gender}.png`
+</script>
+</body>
+
+</html>
