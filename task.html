@@ -11,20 +11,76 @@
 
 <body>
     <div class="screen screen-task">
-        <div class="game-header">
-            <div class="status-user">
-                <div class="status-user-img">
-                    <img src="./img/status-user/vip.png" alt="">
+        <div class="task-header" data-vip="false">
+            <div class="btn-action" data-vip="false">Задания</div>
+            <div class="btn-action secondary-btn" data-vip="true"> VIP Задания</div>
+        </div>
+        <div class="task-container" data-vip="false">
+            <div class="task-item checked">
+                <div class="task-item-title">
+                    Подписаться на канал
                 </div>
-                <div class="status-user-title">
-                    VIP-<span id="gender-title">казашка</span> 
+                <div class="task-item-wrapper">
+                    <span class="task-item-coin">+ 1 000</span>
+                    <div class="task-item-check"></div>
                 </div>
+
             </div>
-            <div id="total-coin" class="user-coin">
-                10 000
+            <div class="task-item check">
+                <div class="task-item-title">
+                    Перейти по ссылке
+                </div>
+                <div class="task-item-wrapper">
+                    <span class="task-item-coin">+ 500</span>
+                    <div class="task-item-check"></div>
+                </div>
+
+            </div>
+            <div class="task-item ">
+                <div class="task-item-title">
+                    Перейти по ссылке
+                </div>
+                <div class="task-item-wrapper">
+                    <span class="task-item-coin">+ 800</span>
+                    <div class="task-item-check"></div>
+                </div>
+
             </div>
         </div>
-        .task-
+        <div class="task-container" data-vip="true">
+            <div class="task-item">
+                <div class="task-item-title">
+                    Подписаться на канал «Burger Brother»
+                </div>
+                <div class="task-item-wrapper">
+                    <span class="task-item-coin">+ 3 000</span>
+                    <div class="task-item-check"></div>
+                </div>
+
+            </div>
+            <div class="task-item checked">
+                <div class="task-item-title">
+                    Пройти опрос <br>
+                    в «Beauty Bay»
+                </div>
+                <div class="task-item-wrapper">
+                    <span class="task-item-coin">+ 4 000</span>
+                    <div class="task-item-check"></div>
+                </div>
+
+            </div>
+            <div class="task-item ">
+                <div class="task-item-title">
+                    Получить купон на покупку <br>
+                    в «KK Beauty»
+                </div>
+                <div class="task-item-wrapper">
+                    <span class="task-item-coin">+ 3 600</span>
+                    <div class="task-item-check"></div>
+                </div>
+
+            </div>
+        </div>
         <div class="footer-nav">
             <div class="nav-item home " onclick="window.location.href = `./game.html?gender=${gender}`">
                 <div class="nav-item-img">
@@ -34,7 +90,7 @@
                     Главная
                 </div>
             </div>
-            <div class="nav-item friends">
+            <div class="nav-item friends" onclick="window.location.href = `./friends.html?gender=${gender}`">
                 <div class="nav-item-img">
 
                 </div>
@@ -42,15 +98,15 @@
                     Друзья
                 </div>
             </div>
-            <div class="nav-item task">
+            <div class="nav-item task select-item " onclick="window.location.href = `./task.html?gender=${gender}`">
                 <div class="nav-item-img">
 
                 </div>
-                <div class="nav-item-title select-item " onclick="window.location.href = `./task.html?gender=${gender}`">
+                <div class="nav-item-title ">
                     Задания
                 </div>
             </div>
-            <div class="nav-item market">
+            <div class="nav-item market" onclick="window.location.href = `./market.html?gender=${gender}`">
                 <div class="nav-item-img">
 
                 </div>
@@ -62,16 +118,26 @@
     </div>
 
 
-<script>
-    let params = new URLSearchParams(document.location.search);
-    let gender = params.get('gender')
-    const genderTitle = document.getElementById('gender-title');
-    if(gender === 'male') {
-        genderTitle.textContent = 'казах'
-    } else if (gender === 'female') {
-        genderTitle.textContent = 'казашка'
-    }
-</script>
+    <script>
+        let params = new URLSearchParams(document.location.search);
+        let gender = params.get('gender');
+
+
+        //btn header
+        const headerTask = document.querySelector('.task-header');
+        const btnsHeaderTask = document.querySelectorAll('.btn-action');
+
+        btnsHeaderTask.forEach((btn) => {
+            btn.addEventListener('click', () => {
+                btnsHeaderTask.forEach((btn) => btn.classList.add('secondary-btn'));
+                btn.classList.remove('secondary-btn');
+                if (btn.getAttribute('data-vip')) {
+                    headerTask.setAttribute('data-vip', btn.getAttribute('data-vip'))
+                }
+            })
+        })
+
+    </script>
 
 </body>
 

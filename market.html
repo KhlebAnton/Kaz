@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, height=device-height, initial-scale=1.0, user-scalable=no, user-scalable=0">
+    <title>Казах</title>
+    <link href="./css/style.css?v=37812431242323" type="text/css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="screen screen-market">
+            <div class="screen-title">Маркет</div>
+            <div class="market-container">
+                <div class="market-item">
+                    <div class="market-item-title">Тачка</div>
+                    <div class="market-item-img">
+                        <img src="./img/market/image.png" alt="">
+                    </div>
+                    <div class="market-item-footer">
+                        <div class="btn-action coin-btn">2 200</div>
+                        <div class="btn-action">TG Stars</div>
+                    </div>
+                </div>
+                <div class="market-item">
+                    <div class="market-item-title">Яхта</div>
+                    <div class="market-item-img">
+                        <img src="./img/market/image-1.png" alt="">
+                    </div>
+                    <div class="market-item-footer">
+                        <div class="btn-action coin-btn">1 500</div>
+                        <div class="btn-action">TG Stars</div>
+                    </div>
+                </div>
+                <div class="market-item">
+                    <div class="market-item-title">Часы</div>
+                    <div class="market-item-img">
+                        <img src="./img/market/image-2.png" alt="">
+                    </div>
+                    <div class="market-item-footer">
+                        <div class="btn-action coin-btn">540</div>
+                        <div class="btn-action">TG Stars</div>
+                    </div>
+                </div>
+                <div class="market-item">
+                    <div class="market-item-title">Очки</div>
+                    <div class="market-item-img">
+                        <img src="./img/market/image-3.png" alt="">
+                    </div>
+                    <div class="market-item-footer">
+                        <div class="btn-action coin-btn">340</div>
+                        <div class="btn-action">TG Stars</div>
+                    </div>
+                </div>
+                <div class="market-item">
+                    <div class="market-item-title">Куртка</div>
+                    <div class="market-item-img">
+                        <img src="./img/market/image-4.png" alt="">
+                    </div>
+                    <div class="market-item-footer">
+                        <div class="btn-action coin-btn">630</div>
+                        <div class="btn-action">TG Stars</div>
+                    </div>
+                </div>
+                <div class="market-item">
+                    <div class="market-item-title">Платье</div>
+                    <div class="market-item-img">
+                        <img src="./img/market/image-5.png" alt="">
+                    </div>
+                    <div class="market-item-footer">
+                        <div class="btn-action coin-btn">220</div>
+                        <div class="btn-action">TG Stars</div>
+                    </div>
+                </div>
+                <div class="market-item">
+                    <div class="market-item-title">Бомбер</div>
+                    <div class="market-item-img">
+                        <img src="./img/market/image-6.png" alt="">
+                    </div>
+                    <div class="market-item-footer">
+                        <div class="btn-action coin-btn">220</div>
+                        <div class="btn-action">TG Stars</div>
+                    </div>
+                </div>
+                <div class="market-item">
+                    <div class="market-item-title">Кепка</div>
+                    <div class="market-item-img">
+                        <img src="./img/market/image-7.png" alt="">
+                    </div>
+                    <div class="market-item-footer">
+                        <div class="btn-action coin-btn">220</div>
+                        <div class="btn-action">TG Stars</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-nav">
+            <div class="nav-item home " onclick="window.location.href = `./game.html?gender=${gender}`">
+                <div class="nav-item-img">
+
+                </div>
+                <div class="nav-item-title">
+                    Главная
+                </div>
+            </div>
+            <div class="nav-item friends " onclick="window.location.href = `./friends.html?gender=${gender}`">
+                <div class="nav-item-img">
+
+                </div>
+                <div class="nav-item-title ">
+                    Друзья
+                </div>
+            </div>
+            <div class="nav-item task " onclick="window.location.href = `./task.html?gender=${gender}`">
+                <div class="nav-item-img">
+
+                </div>
+                <div class="nav-item-title ">
+                    Задания
+                </div>
+            </div>
+            <div class="nav-item market select-item " onclick="window.location.href = `./market.html?gender=${gender}`">
+                <div class="nav-item-img">
+
+                </div>
+                <div class="nav-item-title">
+                    Маркет
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        let params = new URLSearchParams(document.location.search);
+        let gender = params.get('gender');
+
+
+    </script>
+
+</body>
+
+</html>
