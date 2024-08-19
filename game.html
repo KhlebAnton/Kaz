@@ -6,7 +6,7 @@
     <meta name="viewport"
         content="width=device-width, height=device-height, initial-scale=1.0, user-scalable=no, user-scalable=0">
     <title>Казах</title>
-    <link href="./css/style.css?v=37873412323" type="text/css" rel="stylesheet">
+    <link href="./css/style.css?v=37121242323" type="text/css" rel="stylesheet">
 </head>
 
 <body>
@@ -75,6 +75,14 @@
     
     const userImg = document.getElementById('tap-user');
     userImg.src = `./img/${gender}.png`
+</script>
+<script>
+    const appHeight = () => {
+        const doc = document.documentElement
+        doc.style.setProperty('--app-height', `${window.innerHeight}px`)
+    }
+    window.addEventListener('resize', appHeight)
+    appHeight()
 </script>
 </body>
 
